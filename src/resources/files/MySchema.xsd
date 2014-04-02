@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+    <xs:simpleType name="costlist">
+        <xs:list itemType="xs:integer"/>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="onWho">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="OTHERS"/>
+            <xs:enumeration value="TREASURY"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="target">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="START"/>
+            <xs:enumeration value="NEXT"/>
+            <xs:enumeration value="JAIL"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="group_type">
+    	<xs:restriction base = "xs:string">
+    		<xs:enumeration value="UTILS" />
+    		<xs:enumeration value="TRANSPORTATION"/>
+    	</xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="city" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="costs" type="costlist"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="country" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="size" type="xs:int"/>
+                <xs:element name="icon" type="xs:string"/> 
+                <xs:element ref="city" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="asset" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="costs" type="costlist"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="group" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="type" type="group_type"/>
+                <xs:element name="size" type="xs:int"/>
+                <xs:element name="cost" type="xs:int"/>
+                <xs:element name="icon" type="xs:string"/>
+                <xs:element ref="asset" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="finance" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="text" type="xs:string"/>
+                <xs:element name="onWho" type="onWho"/>
+                <xs:element name="amount" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="goto" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="text" type="xs:string"/>
+                <xs:element name="target" type="target"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="pardon" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="text" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="finances">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="size" type="xs:int"/>
+                <xs:element ref="finance" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="gotos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="size" type="xs:int"/>
+                <xs:element ref="goto" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="pardons">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="size" type="xs:int"/>
+                <xs:element ref="pardon"  maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="surprises">
+        <xs:complexType>
+            <xs:sequence>             
+                <xs:element ref="finances"/>                
+                <xs:element ref="gotos"/>                
+                <xs:element ref="pardons"/>                
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="warrants">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="finances"/>
+                <xs:element ref="gotos"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="cards">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="surprises"/>
+                <xs:element ref="warrants"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="simple_asset_groups">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="group" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="countries">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="size" type="xs:int"/>
+                <xs:element ref="country" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="monopoly">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="countries"/>
+                <xs:element ref="simple_asset_groups"/>
+                <xs:element ref="cards"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

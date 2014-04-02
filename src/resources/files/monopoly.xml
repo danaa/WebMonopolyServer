@@ -1,0 +1,338 @@
+<?xml version="1.0"?>
+
+<monopoly>
+
+	<countries>
+		<size>8</size>
+
+		<country> 
+			<name>Israel</name> 
+			<size>2</size>
+			<icon>Israel.png</icon>
+
+			<city>
+				<name>Ramat Gan</name>
+				<costs>300 75 30 60 150 220</costs>
+			</city>
+
+			<city>
+				<name>Kiryat Shmona</name>
+				<costs>100 20 10 30 70 100</costs>
+			</city>
+
+		</country>
+
+
+		<country>
+			<name>United Kingdom</name>
+			<size>3</size>
+			<icon>Kingdom.png</icon>
+
+			<city>
+				<name>London</name> 
+				<costs>500 100 50 100 200 400</costs>
+			</city>
+
+			<city>
+				<name>Birmingham</name> 
+				<costs>400 75 40 80 160 320</costs>
+			</city>
+
+			<city>
+				<name>Leeds</name> 
+				<costs>300 50 30 60 120 240</costs>
+			</city>
+		</country>
+
+
+		<country>
+			<name>United States</name>
+			<size>3</size>
+			<icon>United_States.png</icon>
+
+			<city>
+				<name>New York</name> 
+				<costs>500 100 50 100 200 400</costs>
+			</city>
+
+			<city>
+				<name>Los Angeles</name>
+				<costs>350 55 35 70 140 280</costs>
+			</city>
+
+			<city>
+				<name>Chicago</name> 
+				<costs>250 50 25 50 100 200</costs>
+			</city>
+
+		</country>
+ 
+
+		<country>
+			<name>Finland</name> 
+			<size>3</size>
+			<icon>Finland.png</icon>
+
+			<city>
+				<name>Helsinki</name> 
+				<costs>200 100 20 50 100 200</costs>
+			</city>
+
+			<city>
+				<name>Espoo</name> 
+				<costs>200 100 20 50 100 200</costs>
+			</city>
+
+			<city>
+				<name>Tampere</name> 
+				<costs>200 100 20 50 100 200</costs>
+			</city>
+
+		</country>
+
+
+		<country>
+			<name>Japan</name> 
+			<size>3</size>
+			<icon>Japan.png</icon>
+
+			<city>
+				<name>Tokyo</name> 
+				<costs>200 100 20 50 100 200</costs>
+			</city>
+
+			<city>
+				<name>Yokohama</name> 
+				<costs>200 100 20 50 100 200</costs>
+			</city>
+
+			<city>
+				<name>Osaka</name> 
+				<costs>200 100 20 50 100 200</costs>
+			</city>
+
+		</country>
+
+
+		<country>
+			<name>Brazil</name>
+			<size>3</size>
+			<icon>Brazil.png</icon>
+
+			<city>
+				<name>Sao Paulo</name> 
+				<costs>200 100 20 50 100 200</costs>>
+			</city>
+
+			<city>
+				<name>Rio de Janeiro</name> 
+				<costs>200 100 20 50 100 200</costs>
+			</city>
+
+			<city>
+				<name>Salvador</name> 
+				<costs>200 100 20 50 100 200</costs>
+			</city>
+
+		</country>
+
+
+		<country>
+			<name>Sweden</name> 
+			<size>3</size>
+			<icon>Sweden.png</icon>
+
+			<city>
+				<name>Stockholm</name> 
+				<costs>200 100 20 50 100 200</costs>
+			</city>
+
+			<city>
+				<name>Gothenburg</name>
+				<costs>200 100 20 50 100 200</costs>
+			</city>
+
+			<city>
+				<name>Malmo</name> 
+				<costs>200 100 20 50 100 200</costs>
+			</city>
+
+		</country>
+
+
+		<country>
+			<name>Azerbaijan</name> 
+			<size>3</size>
+			<icon>Azerbaijan.png</icon>
+
+			<city>
+				<name>Baku</name> 
+				<costs>200 100 20 50 100 200</costs>>
+			</city>
+
+			<city>
+				<name>Ganja</name> 
+				<costs>200 100 20 50 100 200</costs>
+			</city>
+
+			<city>
+				<name>Sumqayit</name> 
+				<costs>200 100 20 50 100 200</costs>
+			</city>
+
+		</country>
+
+	</countries>
+
+
+
+	<simple_asset_groups>
+		<group>
+			<name>transportation</name>
+			<type>TRANSPORTATION</type>
+			<size>4</size>
+			<cost>300</cost>
+			<icon>trans.jpg</icon>
+
+			<asset>
+				<name>Airplane</name> 
+				<costs>200 75</costs>
+			</asset>
+
+			<asset>
+				<name>Ship</name> 
+				<costs>200 75</costs>
+			</asset>
+
+			<asset>
+				<name>Train</name> 
+				<costs>200 75</costs>
+			</asset>
+
+			<asset>
+				<name>Bus</name> 
+				<costs>200 75</costs>
+			</asset>
+		</group>
+		
+		<group>
+			<name>utils</name>
+			<type>UTILS</type>
+			<size>2</size>
+			<cost>300</cost>
+			<icon>utils.jpg</icon>
+
+			<asset>
+				<name>Internet</name> 
+				<costs>200 75</costs>
+			</asset>
+
+			<asset>
+				<name>Electricity</name>
+				<costs>200 75</costs>
+			</asset>
+		</group>
+	</simple_asset_groups>
+
+
+<cards>
+	<surprises>
+		<finances>
+			<size>4</size>
+			<finance>
+				<text>You win 50$ pocket money from the treasury</text>
+				<onWho>TREASURY</onWho>
+				<amount>50</amount>
+			</finance>
+
+			<finance>
+				<text>Smile! everyone gives you 20$ just cause your so nice</text>
+				<onWho>OTHERS</onWho>
+				<amount>20</amount>
+			</finance>
+			
+			<finance>
+				<text>Happy Birthday! everyone gives you 100$</text>
+				<onWho>OTHERS</onWho>
+				<amount>100</amount>
+			</finance>
+			
+			<finance>
+				<text>It's your lucky day! you won 1000$ on the lottery</text>
+				<onWho>TREASURY</onWho>
+				<amount>1000</amount>
+			</finance>
+		</finances>
+
+		<gotos>
+			<size>2</size>
+			<goto>
+				<text>go to start, receive 400$</text>
+				<target>START</target>
+			</goto>
+
+			<goto>
+				<text>go to next surprise if you passed start, get 200$</text>
+				<target>NEXT</target>
+			</goto>
+		</gotos>
+
+		<pardons>
+			<size>1</size>
+			<pardon>
+				<text>you got a pardon card. keep it and you can get out of jail</text>
+			</pardon>
+		</pardons>
+	</surprises>
+
+
+	<warrants>
+		<finances>
+			<size>5</size>
+			<finance>
+				<text>give 100$ tax to treasury</text>
+				<onWho>TREASURY</onWho>
+				<amount>100</amount>
+			</finance>
+
+			<finance>
+				<text>give every player 40$</text>
+				<onWho>OTHERS</onWho>
+				<amount>40</amount>
+			</finance>
+			
+			<finance>
+				<text>donate 100$ to charity</text>
+				<onWho>TREASURY</onWho>
+				<amount>100</amount>
+			</finance>
+			
+			<finance>
+				<text>You feel generous, give every player 50$</text>
+				<onWho>OTHERS</onWho>
+				<amount>50</amount>
+			</finance>
+			
+			<finance>
+				<text>BAD LUCK! someone robbed 100$ from you</text>
+				<onWho>TREASURY</onWho>
+				<amount>100</amount>
+			</finance>
+		</finances>
+
+		<gotos>
+			<size>2</size>
+			<goto>
+				<text>go to jail! don't pass on start</text>
+				<target>JAIL</target>
+			</goto>
+
+			<goto>
+				<text>go to next warrant, don't pass on start</text>
+				<target>NEXT</target>
+			</goto>
+		</gotos>
+	</warrants>
+</cards>
+
+</monopoly>
