@@ -5,7 +5,7 @@ import gameLogic.players.Player;
 
 
 /**
- * this class generates events according to the requasted type
+ * this class generates events according to the requested type
  * @author Dana Akerman
  */
 public class EventsFactory 

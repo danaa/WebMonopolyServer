@@ -50,8 +50,8 @@ public class MonopolyGame
     //---------------------------------------------------------------------------
 
     /**
-     * gets the game board xml
-     * @return the game board xml as string
+     * gets the game board XML
+     * @return the game board XML as string
      */
     public String getGameBoardXML() 
     {
@@ -223,8 +223,7 @@ public class MonopolyGame
      * @return IDResult
      */
     public IDResult joinGame (String gameName, String playerName) 
-    {
-        
+    {    
         try
         {
             if(gameName == null)
@@ -239,7 +238,7 @@ public class MonopolyGame
             {
                 return new IDResult("cannot join an active game");
             }
-            if(_gameManager.getPlayerByName(playerName) != null || playerName == null || playerName.equals(""))
+            if(_gameManager.getPlayerByName(playerName) != null || playerName == null || playerName.isEmpty())
             {
                 return new IDResult("illegal player name");
             }

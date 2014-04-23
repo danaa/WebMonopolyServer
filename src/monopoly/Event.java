@@ -1,8 +1,8 @@
 package monopoly;
 
 /**
- * User: Liron Blecher
- * Date: 3/28/11
+ * This interface represents a game event
+ * @author: Dana Akerman
  */
 
 /*
