@@ -31,7 +31,6 @@ package monopoly;
 
 public interface Event 
 {
-
     //generic event details
     public String getGameName();
     public int getEventID();
