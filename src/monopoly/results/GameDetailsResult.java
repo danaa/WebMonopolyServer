@@ -1,7 +1,7 @@
 package monopoly.results;
 
 /**
- * @author blecherl
+ * @author Dana Akerman
  */
 public class GameDetailsResult extends MonopolyResult
 {

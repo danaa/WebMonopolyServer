@@ -1,7 +1,7 @@
 package monopoly.results;
 
 /**
- * User: Liron Blecher
+ * User: Dana Akerman
  * Date: 3/28/11
  */
 public class MonopolyResult 

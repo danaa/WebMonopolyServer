@@ -5,7 +5,7 @@ import monopoly.Event;
 
 
 /**
- * @author blecherl
+ * @author Dana Akerman
  */
 public class EventArrayResult extends MonopolyResult
 {
